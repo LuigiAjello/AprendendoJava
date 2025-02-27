@@ -1,3 +1,4 @@
+package aula1;
 import java.util.Scanner;
 
 public class exc7 {
@@ -5,13 +6,13 @@ public class exc7 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o primeiro número: ");
-        double num1 = scanner;
+        double num1 = scanner.nextDouble();
 
         System.out.print("Digite o segundo número: ");
-        double num2 = scanner;
+        double num2 = scanner.nextDouble();
 
-        System.out.print("Escolha a operação (soma, subtração, multiplicação, divisão): ");
-        String operacao = scanner;
+        System.out.print("Escolha a operação (soma, subtracao, multiplicacao, divisao): ");
+        String operacao = scanner.next().toLowerCase(); // Converte para minúsculas para evitar erro na comparação
 
         double resultado;
 
@@ -21,17 +22,17 @@ public class exc7 {
                 System.out.println("Resultado da soma: " + resultado);
                 break;
 
-            case "subtração":
+            case "subtracao":
                 resultado = num1 - num2;
                 System.out.println("Resultado da subtração: " + resultado);
                 break;
 
-            case "multiplicação":
+            case "multiplicacao":
                 resultado = num1 * num2;
                 System.out.println("Resultado da multiplicação: " + resultado);
                 break;
 
-            case "divisão":
+            case "divisao":
                 if (num2 != 0) {
                     resultado = num1 / num2;
                     System.out.println("Resultado da divisão: " + resultado);
