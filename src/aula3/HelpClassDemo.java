@@ -1,21 +1,56 @@
-package aula1;
+package aula3;
 import java.util.Scanner;
 
-public class exc8 {
-    public static void main(String[] args) {
+public class HelpClassDemo {
+    private double num1;
+    private double num2;
+    private char operacao;
+
+    public void showMenu() {
         Scanner scanner = new Scanner(System.in);
-        double num1, num2, resultado;
-        char operacao;
 
         System.out.println("Calculadora Simples");
         System.out.print("Digite o primeiro número: ");
         num1 = scanner.nextDouble();
-        
+
         System.out.print("Digite a operação (+, -, *, /): ");
         operacao = scanner.next().charAt(0);
-        
+
         System.out.print("Digite o segundo número: ");
         num2 = scanner.nextDouble();
+
+        scanner.close(); 
+
+   
+        if (isValid()) {
+            HelpOn(); 
+        }
+    }
+
+    
+    
+    
+    public boolean isValid() {
+        
+        if (operacao != '+' && operacao != '-' && operacao != '*' && operacao != '/') {
+            System.out.println("Operação inválida.");
+            return false;
+        }
+
+        
+        if (operacao == '/' && num2 == 0) {
+            System.out.println("Erro: Divisão por zero não é permitida.");
+            return false;
+        }
+
+        return true; 
+    }
+
+    
+    
+    
+    public void HelpOn() {
+        double resultado = 0;  
 
         switch (operacao) {
             case '+':
@@ -41,8 +76,9 @@ public class exc8 {
             default:
                 System.out.println("Operação inválida.");
         }
-        
-        scanner.close();
     }
 }
+
+
+
 

@@ -12,8 +12,6 @@ class Veiculo{
 
 class VeiculoDemo {
 	
-	  
-	  
 	public static void main(String[]args) {
 		 Veiculo minivan = new Veiculo();
 		 int autonomia_carro ;
